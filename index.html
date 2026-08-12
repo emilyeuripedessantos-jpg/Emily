@@ -1,45 +1,181 @@
+
+
 <!DOCTYPE html>
-<body>
-
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-
-
-<title>Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<h2>Meu primeiro post</h2>
-<p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
-<p>Por: Emily</p>
-</body></html>
-<style><style>
-header {
-background-color: #ACC8E5;
-color: #112A46;
-}
-!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog Pessoal</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
-        header { background: #333; color: #fff; padding: 10px 20px; text-align: center; }
-        article { background: #fff; padding: 20px; margin-top: 20px; border-radius: 5px; }
-        h2 { color: #0066cc; }
+        /* Estilos Globais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin-bottom: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Área dos Posts */
+        main {
+            flex: 3;
+            min-width: 300px;
+        }
+        article {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        article h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .meta-info {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        .btn-leia-mais {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .btn-leia-mais:hover {
+            background-color: #2980b9;
+        }
+
+        /* Barra Lateral (Sidebar) */
+        aside {
+            flex: 1;
+            min-width: 250px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        aside h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        aside ul {
+            list-style: none;
+        }
+        aside ul li {
+            margin-bottom: 10px;
+        }
+        aside ul li a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        aside ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Topo do Blog -->
     <header>
-        <h1>Bem-vindo ao Meu Blog</h1>
+        <h1>Meu Blog</h1>
+        <p>Compartilhando ideias, tecnologias e aprendizados</p>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
     </header>
-    <main>
-        <article>
-            <h2>Título do Primeiro Post</h2>
-            <p>Este é o parágrafo inicial do meu artigo no blog criado com código.</p>
-        </article>
-    </main>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        
+        <!-- Lista de Postagens -->
+        <main>
+            <article>
+                <h2>Como Começar na Programação</h2>
+                <div class="meta-info">Postado em 12 de Agosto de 2026 por Admin</div>
+                <p>A programação é uma das habilidades mais requisitadas no mercado atual. Para começar, escolha uma linguagem amigável como Python ou JavaScript, defina pequenos projetos práticos e pratique diariamente...</p>
+                <a href="#" class="btn-leia-mais">Leia mais</a>
+            </article>
+
+            <article>
+                <h2>O que é o Design Responsivo?</h2>
+                <div class="meta-info">Postado em 10 de Agosto de 2026 por Admin</div>
+                <p>Criar sites que se adaptam a celulares, tablets e computadores não é mais um diferencial, é uma obrigação. Usando técnicas de CSS como Media Queries e Flexbox, seu conteúdo mantém a legibilidade em qualquer tela...</p>
+                <a href="#" class="btn-leia-mais">Leia mais</a>
+            </article>
+        </main>
+
+        <!-- Barra Lateral -->
+        <aside>
+            <h3>Sobre Mim</h3>
+            <p style="margin-bottom: 20px;">Olá! Sou um entusiasta de tecnologia criando meu espaço na web.</p>
+
+            <h3>Categorias</h3>
+            <ul>
+                <li><a href="#">Programação</a></li>
+                <li><a href="#">Design Web</a></li>
+                <li><a href="#">Tutoriais</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
