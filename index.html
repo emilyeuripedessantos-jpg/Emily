@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog Pessoal</title>
+    <title>Meu Blog Tech</title>
     <style>
         /* Estilos Globais */
         * {
@@ -179,3 +179,313 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog Tech - Post Completo</title>
+    <style>
+        /* Estilos Globais e Variáveis para Dark Mode */
+        :root {
+            --bg-color: #f4f4f9;
+            --card-bg: #fff;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --primary-color: #3498db;
+            --secondary-text: #7f8c8d;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1e272e;
+            --card-bg: #2d3436;
+            --text-color: #f5f6fa;
+            --header-bg: #131c24;
+            --secondary-text: #b2bec3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--header-bg);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 { margin-bottom: 10px; }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover { text-decoration: underline; }
+
+        /* Botão Dark Mode */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        main {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        /* Conteúdo do Post Expandido */
+        .post-completo {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .post-completo h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+        }
+
+        .conteudo-principal p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Seção de Comentários */
+        .secao-comentarios {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .secao-comentarios h3 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        .formulario-comentario input, 
+        .formulario-comentario textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .btn-enviar {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-enviar:hover { background-color: #2980b9; }
+
+        .lista-comentarios { margin-top: 20px; }
+
+        .comentario-item {
+            border-bottom: 1px solid var(--secondary-text);
+            padding: 15px 0;
+        }
+
+        .comentario-autor {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Barra Lateral */
+        aside {
+            flex: 1;
+            min-width: 250px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        aside ul { list-style: none; }
+        aside ul li { margin-bottom: 10px; }
+        aside ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        aside ul li a:hover { text-decoration: underline; }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--header-bg);
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topo do Blog -->
+    <header>
+        <h1>Meu Blog</h1>
+        <p>Compartilhando ideias, tecnologias e aprendizados</p>
+        <button class="theme-toggle" id="themeBtn">Alternar Tema</button>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        
+        <!-- Post Expandido e Comentários -->
+        <main>
+            <article class="post-completo">
+                <h2>Como Começar na Programação</h2>
+                <div class="meta-info">Postado em 12 de Agosto de 2026 por Admin</div>
+                
+                <div class="conteudo-principal">
+                    <p>A programação é uma das habilidades mais requisitadas no mercado atual. Para começar, escolha uma linguagem amigável como Python ou JavaScript, defina pequenos projetos práticos e pratique diariamente.</p>
+                    <p>Não tente absorver toda a teoria de uma vez. O segredo do aprendizado em desenvolvimento de software está em construir pequenas soluções. Crie uma calculadora, uma lista de tarefas ou uma página simples como este blog.</p>
+                    <p>Além disso, utilize plataformas de comunidade para tirar dúvidas e ler códigos de outras pessoas. O processo de quebrar a cabeça com um erro técnico faz parte da evolução de qualquer desenvolvedor.</p>
+                </div>
+            </article>
+
+            <!-- Seção de Comentários interativa -->
+            <section class="secao-comentarios">
+                <h3>Deixe um Comentário</h3>
+                <form class="formulario-comentario" id="commentForm">
+                    <input type="text" id="authorName" placeholder="Seu Nome" required>
+                    <textarea id="commentText" rows="4" placeholder="Escreva seu comentário aqui..." required></textarea>
+                    <button type="submit" class="btn-enviar">Publicar Comentário</button>
+                </form>
+
+                <div class="lista-comentarios" id="commentsContainer">
+                    <div class="comentario-item">
+                        <div class="comentario-autor">Lucas Silva</div>
+                        <p>Excelente post! Python realmente me ajudou muito no início por causa da sintaxe limpa.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Barra Lateral -->
+        <aside>
+            <h3>Sobre Mim</h3>
+            <p style="margin-bottom: 20px;">Olá! Sou um entusiasta de tecnologia criando meu espaço na web.</p>
+            
+            <h3>Categorias</h3>
+            <ul>
+                <li><a href="#">Programação</a></li>
+                <li><a href="#">Design Web</a></li>
+                <li><a href="#">Tutoriais</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        // Lógica do Dark Mode utilizando Variáveis CSS
+        const themeBtn = document.getElementById('themeBtn');
+        let currentTheme = localStorage.getItem('theme') || 'light';
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Lógica de Inserção de Comentários dinâmicos
+        const commentForm = document.getElementById('commentForm');
+        const commentsContainer = document.getElementById('commentsContainer');
+
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('authorName').value;
+            const text = document.getElementById('commentText').value;
+
+            // Criar elementos de estrutura do comentário
+            const newItem = document.createElement('div');
+            newItem.classList.add('comentario-item');
+
+            const newAutor = document.createElement('div');
+            newAutor.classList.add('comentario-autor');
+            newAutor.textContent = name;
+
+            const newTexto = document.createElement('p');
+            newTexto.textContent = text;
+
+            // Inserir na árvore DOM
+            newItem.appendChild(newAutor);
