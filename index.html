@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,487 +6,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Blog Tech</title>
     <style>
-        /* Estilos Globais */
+        /* Configurações Globais */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
             line-height: 1.6;
         }
 
-        /* Cabeçalho */
         header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 20px 0;
+            background-color: #1e293b;
+            padding: 2rem;
             text-align: center;
+            border-bottom: 2px solid #334155;
         }
+
         header h1 {
-            margin-bottom: 10px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
+            color: #38bdf8;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Container Principal */
-        .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        header p {
+            color: #94a3b8;
         }
 
-        /* Área dos Posts */
         main {
-            flex: 3;
-            min-width: 300px;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        article {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
+
+        /* Card do Post */
+        .post {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-title {
+            color: #f1f5f9;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-meta {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Código de Exemplo */
+        pre {
+            background-color: #0f172a;
+            border: 1px solid #334155;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        article h2 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .meta-info {
-            font-size: 0.85rem;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-        }
-        .btn-leia-mais {
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-        .btn-leia-mais:hover {
-            background-color: #2980b9;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
         }
 
-        /* Barra Lateral (Sidebar) */
-        aside {
-            flex: 1;
-            min-width: 250px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            height: fit-content;
-        }
-        aside h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-        aside ul {
-            list-style: none;
-        }
-        aside ul li {
-            margin-bottom: 10px;
-        }
-        aside ul li a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        aside ul li a:hover {
-            text-decoration: underline;
+        code {
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
+            color: #38bdf8;
         }
 
-        /* Rodapé */
-        footer {
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Topo do Blog -->
-    <header>
-        <h1>Meu Blog</h1>
-        <p>Compartilhando ideias, tecnologias e aprendizados</p>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
-
-    <!-- Conteúdo Principal -->
-    <div class="container">
-        
-        <!-- Lista de Postagens -->
-        <main>
-            <article>
-                <h2>Como Começar na Programação</h2>
-                <div class="meta-info">Postado em 12 de Agosto de 2026 por Admin</div>
-                <p>A programação é uma das habilidades mais requisitadas no mercado atual. Para começar, escolha uma linguagem amigável como Python ou JavaScript, defina pequenos projetos práticos e pratique diariamente...</p>
-                <a href="#" class="btn-leia-mais">Leia mais</a>
-            </article>
-
-            <article>
-                <h2>O que é o Design Responsivo?</h2>
-                <div class="meta-info">Postado em 10 de Agosto de 2026 por Admin</div>
-                <p>Criar sites que se adaptam a celulares, tablets e computadores não é mais um diferencial, é uma obrigação. Usando técnicas de CSS como Media Queries e Flexbox, seu conteúdo mantém a legibilidade em qualquer tela...</p>
-                <a href="#" class="btn-leia-mais">Leia mais</a>
-            </article>
-        </main>
-
-        <!-- Barra Lateral -->
-        <aside>
-            <h3>Sobre Mim</h3>
-            <p style="margin-bottom: 20px;">Olá! Sou um entusiasta de tecnologia criando meu espaço na web.</p>
-
-            <h3>Categorias</h3>
-            <ul>
-                <li><a href="#">Programação</a></li>
-                <li><a href="#">Design Web</a></li>
-                <li><a href="#">Tutoriais</a></li>
-            </ul>
-        </aside>
-
-    </div>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog Tech - Post Completo</title>
-    <style>
-        /* Estilos Globais e Variáveis para Dark Mode */
-        :root {
-            --bg-color: #f4f4f9;
-            --card-bg: #fff;
-            --text-color: #333;
-            --header-bg: #2c3e50;
-            --primary-color: #3498db;
-            --secondary-text: #7f8c8d;
+        /* Botões de Reação */
+        .reactions {
+            display: flex;
+            gap: 1rem;
+            border-top: 1px solid #334155;
+            padding-top: 1.25rem;
+            margin-top: 1.5rem;
         }
 
-        [data-theme="dark"] {
-            --bg-color: #1e272e;
-            --card-bg: #2d3436;
-            --text-color: #f5f6fa;
-            --header-bg: #131c24;
-            --secondary-text: #b2bec3;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* Cabeçalho */
-        header {
-            background-color: var(--header-bg);
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        header h1 { margin-bottom: 10px; }
-        
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover { text-decoration: underline; }
-
-        /* Botão Dark Mode */
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: #fff;
+        .btn-reaction {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #334155;
+            color: #94a3b8;
             border: none;
-            padding: 8px 12px;
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
         }
 
-        /* Container Principal */
-        .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        .btn-reaction:hover {
+            background-color: #475569;
+            color: #f1f5f9;
         }
 
-        main {
-            flex: 3;
-            min-width: 300px;
+        /* Estados Ativos */
+        .btn-reaction.liked {
+            background-color: #0284c7;
+            color: #ffffff;
         }
 
-        /* Conteúdo do Post Expandido */
-        .post-completo {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        .post-completo h2 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .meta-info {
-            font-size: 0.85rem;
-            color: var(--secondary-text);
-            margin-bottom: 20px;
-        }
-
-        .conteudo-principal p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        /* Seção de Comentários */
-        .secao-comentarios {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        .secao-comentarios h3 {
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-        }
-
-        .formulario-comentario input, 
-        .formulario-comentario textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: var(--bg-color);
-            color: var(--text-color);
-        }
-
-        .btn-enviar {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .btn-enviar:hover { background-color: #2980b9; }
-
-        .lista-comentarios { margin-top: 20px; }
-
-        .comentario-item {
-            border-bottom: 1px solid var(--secondary-text);
-            padding: 15px 0;
-        }
-
-        .comentario-autor {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* Barra Lateral */
-        aside {
-            flex: 1;
-            min-width: 250px;
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            height: fit-content;
-        }
-
-        aside h3 {
-            color: var(--text-color);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-        }
-
-        aside ul { list-style: none; }
-        aside ul li { margin-bottom: 10px; }
-        aside ul li a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        aside ul li a:hover { text-decoration: underline; }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--header-bg);
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
+        .btn-reaction.disliked {
+            background-color: #e11d48;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Topo do Blog -->
     <header>
-        <h1>Meu Blog</h1>
-        <p>Compartilhando ideias, tecnologias e aprendizados</p>
-        <button class="theme-toggle" id="themeBtn">Alternar Tema</button>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
+        <h1>Meu Blog Tech 🚀</h1>
+        <p>Compartilhando linhas de código e ideias sobre o futuro do desenvolvimento.</p>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <div class="container">
-        
-        <!-- Post Expandido e Comentários -->
-        <main>
-            <article class="post-completo">
-                <h2>Como Começar na Programação</h2>
-                <div class="meta-info">Postado em 12 de Agosto de 2026 por Admin</div>
-                
-                <div class="conteudo-principal">
-                    <p>A programação é uma das habilidades mais requisitadas no mercado atual. Para começar, escolha uma linguagem amigável como Python ou JavaScript, defina pequenos projetos práticos e pratique diariamente.</p>
-                    <p>Não tente absorver toda a teoria de uma vez. O segredo do aprendizado em desenvolvimento de software está em construir pequenas soluções. Crie uma calculadora, uma lista de tarefas ou uma página simples como este blog.</p>
-                    <p>Além disso, utilize plataformas de comunidade para tirar dúvidas e ler códigos de outras pessoas. O processo de quebrar a cabeça com um erro técnico faz parte da evolução de qualquer desenvolvedor.</p>
-                </div>
-            </article>
-
-            <!-- Seção de Comentários interativa -->
-            <section class="secao-comentarios">
-                <h3>Deixe um Comentário</h3>
-                <form class="formulario-comentario" id="commentForm">
-                    <input type="text" id="authorName" placeholder="Seu Nome" required>
-                    <textarea id="commentText" rows="4" placeholder="Escreva seu comentário aqui..." required></textarea>
-                    <button type="submit" class="btn-enviar">Publicar Comentário</button>
-                </form>
-
-                <div class="lista-comentarios" id="commentsContainer">
-                    <div class="comentario-item">
-                        <div class="comentario-autor">Lucas Silva</div>
-                        <p>Excelente post! Python realmente me ajudou muito no início por causa da sintaxe limpa.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Barra Lateral -->
-        <aside>
-            <h3>Sobre Mim</h3>
-            <p style="margin-bottom: 20px;">Olá! Sou um entusiasta de tecnologia criando meu espaço na web.</p>
+    <main>
+        <article class="post">
+            <h2 class="post-title">Dominando o Async/Await no JavaScript</h2>
+            <div class="post-meta">Publicado por DevTech | 19 de Agosto de 2026</div>
             
-            <h3>Categorias</h3>
-            <ul>
-                <li><a href="#">Programação</a></li>
-                <li><a href="#">Design Web</a></li>
-                <li><a href="#">Tutoriais</a></li>
-            </ul>
-        </aside>
-    </div>
+            <div class="post-content">
+                <p>Trabalhar com requisições assíncronas ficou muito mais simples com a chegada do async/await. Isso evita o famoso "Callback Hell" e deixa o seu código limpo, parecendo uma execução síncrona tradicional.</p>
+                
+                <pre><code>async function buscarDados() {
+  try {
+    const resposta = await fetch('https://github.com');
+    const dados = await resposta.json();
+    console.log(dados.name);
+  } catch (erro) {
+    console.error('Erro ao buscar dados:', erro);
+  }
+}</code></pre>
+            </div>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
-    </footer>
+            <!-- Área de Interação -->
+            <div class="reactions">
+                <button id="likeBtn" class="btn-reaction" onclick="handleLike()">
+                    👍 Curtir (<span id="likeCount">15</span>)
+                </button>
+                <button id="dislikeBtn" class="btn-reaction" onclick="handleDislike()">
+                    👎 Descurtir (<span id="dislikeCount">2</span>)
+                </button>
+            </div>
+        </article>
+    </main>
 
-    <!-- Scripts de Interatividade -->
     <script>
-        // Lógica do Dark Mode utilizando Variáveis CSS
-        const themeBtn = document.getElementById('themeBtn');
-        let currentTheme = localStorage.getItem('theme') || 'light';
+        // Valores iniciais fictícios
+        let totalLikes = 15;
+        let totalDislikes = 2;
+        
+        // Controla a escolha atual do usuário: 'none', 'liked' ou 'disliked'
+        let userStatus = 'none'; 
 
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
+        // Referências dos elementos HTML
+        const likeBtn = document.getElementById('likeBtn');
+        const dislikeBtn = document.getElementById('dislikeBtn');
+        const likeCount = document.getElementById('likeCount');
+        const dislikeCount = document.getElementById('dislikeCount');
+
+        function handleLike() {
+            if (userStatus === 'liked') {
+                // Remove a curtida se clicar de novo
+                totalLikes--;
+                userStatus = 'none';
+            } else {
+                // Se estava como descurtido, remove a descurtida primeiro
+                if (userStatus === 'disliked') {
+                    totalDislikes--;
+                }
+                totalLikes++;
+                userStatus = 'liked';
+            }
+            updateInterface();
         }
 
-        themeBtn.addEventListener('click', () => {
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
+        function handleDislike() {
+            if (userStatus === 'disliked') {
+                // Remove a descurtida se clicar de novo
+                totalDislikes--;
+                userStatus = 'none';
             } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
+                // Se estava como curtido, remove a curtida primeiro
+                if (userStatus === 'liked') {
+                    totalLikes--;
+                }
+                totalDislikes++;
+                userStatus = 'disliked';
             }
-        });
+            updateInterface();
+        }
 
-        // Lógica de Inserção de Comentários dinâmicos
-        const commentForm = document.getElementById('commentForm');
-        const commentsContainer = document.getElementById('commentsContainer');
+        function updateInterface() {
+            // Atualiza os contadores na tela
+            likeCount.textContent = totalLikes;
+            dislikeCount.textContent = totalDislikes;
 
-        commentForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('authorName').value;
-            const text = document.getElementById('commentText').value;
+            // Altera o visual dos botões baseado na escolha
+            likeBtn.classList.remove('liked');
+            dislikeBtn.classList.remove('disliked');
 
-            // Criar elementos de estrutura do comentário
-            const newItem = document.createElement('div');
-            newItem.classList.add('comentario-item');
-
-            const newAutor = document.createElement('div');
-            newAutor.classList.add('comentario-autor');
-            newAutor.textContent = name;
-
-            const newTexto = document.createElement('p');
-            newTexto.textContent = text;
-
-            // Inserir na árvore DOM
-            newItem.appendChild(newAutor);
-
-<button>❤️</button>
+            if (userStatus === 'liked') {
+                likeBtn.classList.add('liked');
+            } else if (userStatus === 'disliked') {
+                dislikeBtn.classList.add('disliked');
+            }
+        }
+    </script>
+</body>
+</html>
