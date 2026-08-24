@@ -1,229 +1,183 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog Tech</title>
+    <title>Projeto Interativo - Votação Permanente</title>
     <style>
-        /* Configurações Globais */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #1e293b;
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 2px solid #334155;
-        }
-
-        header h1 {
-            color: #38bdf8;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            color: #94a3b8;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        /* Card do Post */
-        .post {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .post-title {
-            color: #f1f5f9;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .post-meta {
-            color: #64748b;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .post-content {
-            color: #cbd5e1;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Código de Exemplo */
-        pre {
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            padding: 1rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-
-        code {
-            font-family: 'Fira Code', Consolas, Monaco, monospace;
-            color: #38bdf8;
-        }
-
-        /* Botões de Reação */
-        .reactions {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            gap: 1rem;
-            border-top: 1px solid #334155;
-            padding-top: 1.25rem;
-            margin-top: 1.5rem;
-        }
-
-        .btn-reaction {
-            display: inline-flex;
+            justify-content: center;
             align-items: center;
-            gap: 0.5rem;
-            background-color: #334155;
-            color: #94a3b8;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 20px;
-            cursor: pointer;
+            height: 100vh;
+            background-color: #eef2f3;
+            margin: 0;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 380px;
+            width: 100%;
+        }
+
+        h3 { color: #333; margin-bottom: 8px; }
+        p { color: #666; font-size: 14px; line-height: 1.5; }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            background: white;
+            font-size: 16px;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .btn-reaction:hover {
-            background-color: #475569;
-            color: #f1f5f9;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
         }
 
-        /* Estados Ativos */
-        .btn-reaction.liked {
-            background-color: #0284c7;
-            color: #ffffff;
+        .btn-like.active {
+            background-color: #e7f3ff;
+            color: #1877f2;
+            border-color: #1877f2;
         }
 
-        .btn-reaction.disliked {
-            background-color: #e11d48;
-            color: #ffffff;
+        .btn-dislike.active {
+            background-color: #ffebe9;
+            color: #e41e3f;
+            border-color: #e41e3f;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Meu Blog Tech 🚀</h1>
-        <p>Compartilhando linhas de código e ideias sobre o futuro do desenvolvimento.</p>
-    </header>
-
-    <main>
-        <article class="post">
-            <h2 class="post-title">Dominando o Async/Await no JavaScript</h2>
-            <div class="post-meta">Publicado por DevTech | 19 de Agosto de 2026</div>
+    <div class="card">
+        <h3>Publicação Global</h3>
+        <p>Os votos dados aqui ficam salvos direto no servidor. Atualize a página à vontade para testar!</p>
+        
+        <div class="buttons-container">
+            <button class="btn btn-like" id="likeBtn">
+                👍 <span id="likeCount">0</span>
+            </button>
             
-            <div class="post-content">
-                <p>Trabalhar com requisições assíncronas ficou muito mais simples com a chegada do async/await. Isso evita o famoso "Callback Hell" e deixa o seu código limpo, parecendo uma execução síncrona tradicional.</p>
-                
-                <pre><code>async function buscarDados() {
-  try {
-    const resposta = await fetch('https://github.com');
-    const dados = await resposta.json();
-    console.log(dados.name);
-  } catch (erro) {
-    console.error('Erro ao buscar dados:', erro);
-  }
-}</code></pre>
-            </div>
-
-            <!-- Área de Interação -->
-            <div class="reactions">
-                <button id="likeBtn" class="btn-reaction" onclick="handleLike()">
-                    👍 Curtir (<span id="likeCount">15</span>)
-                </button>
-                <button id="dislikeBtn" class="btn-reaction" onclick="handleDislike()">
-                    👎 Descurtir (<span id="dislikeCount">2</span>)
-                </button>
-            </div>
-        </article>
-    </main>
+            <button class="btn btn-dislike" id="dislikeBtn">
+                👎 <span id="dislikeCount">0</span>
+            </button>
+        </div>
+    </div>
 
     <script>
-        // Valores iniciais fictícios
-        let totalLikes = 15;
-        let totalDislikes = 2;
-        
-        // Controla a escolha atual do usuário: 'none', 'liked' ou 'disliked'
-        let userStatus = 'none'; 
-
-        // Referências dos elementos HTML
         const likeBtn = document.getElementById('likeBtn');
         const dislikeBtn = document.getElementById('dislikeBtn');
         const likeCount = document.getElementById('likeCount');
         const dislikeCount = document.getElementById('dislikeCount');
 
-        function handleLike() {
-            if (userStatus === 'liked') {
-                // Remove a curtida se clicar de novo
-                totalLikes--;
-                userStatus = 'none';
+        let likes = 0;
+        let dislikes = 0;
+        let userAction = null; // Controla apenas a ação local do navegador atual
+
+        // 1. Busca os números iniciais salvos no servidor ao carregar a página
+        async function carregarVotosIniciais() {
+            try {
+                const resposta = await fetch('/api/votos');
+                const dados = await resposta.json();
+                likes = dados.likes || 0;
+                dislikes = dados.dislikes || 0;
+                atualizarInterface();
+            } catch (erro) {
+                console.error('Erro ao buscar dados iniciais:', erro);
+            }
+        }
+
+        // 2. Envia os novos valores calculados para salvar permanentemente
+        async function salvarNoServidor() {
+            try {
+                await fetch('/api/votos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ likes, dislikes })
+                });
+            } catch (erro) {
+                console.error('Erro ao salvar os votos:', erro);
+            }
+        }
+
+        function atualizarInterface() {
+            likeCount.textContent = likes;
+            dislikeCount.textContent = dislikes;
+        }
+
+        // Evento de clique em curtir
+        likeBtn.addEventListener('click', async () => {
+            if (userAction === 'liked') {
+                likes--;
+                userAction = null;
+                likeBtn.classList.remove('active');
             } else {
-                // Se estava como descurtido, remove a descurtida primeiro
-                if (userStatus === 'disliked') {
-                    totalDislikes--;
+                if (userAction === 'disliked') {
+                    dislikes--;
+                    dislikeBtn.classList.remove('active');
                 }
-                totalLikes++;
-                userStatus = 'liked';
+                likes++;
+                userAction = 'liked';
+                likeBtn.classList.add('active');
             }
-            updateInterface();
-        }
+            atualizarInterface();
+            await salvarNoServidor();
+        });
 
-        function handleDislike() {
-            if (userStatus === 'disliked') {
-                // Remove a descurtida se clicar de novo
-                totalDislikes--;
-                userStatus = 'none';
+        // Evento de clique em descurtir
+        dislikeBtn.addEventListener('click', async () => {
+            if (userAction === 'disliked') {
+                dislikes--;
+                userAction = null;
+                dislikeBtn.classList.remove('active');
             } else {
-                // Se estava como curtido, remove a curtida primeiro
-                if (userStatus === 'liked') {
-                    totalLikes--;
+                if (userAction === 'liked') {
+                    likes--;
+                    likeBtn.classList.remove('active');
                 }
-                totalDislikes++;
-                userStatus = 'disliked';
+                dislikes++;
+                userAction = 'disliked';
+                dislikeBtn.classList.add('active');
             }
-            updateInterface();
-        }
+            atualizarInterface();
+            await salvarNoServidor();
+        });
 
-        function updateInterface() {
-            // Atualiza os contadores na tela
-            likeCount.textContent = totalLikes;
-            dislikeCount.textContent = totalDislikes;
-
-            // Altera o visual dos botões baseado na escolha
-            likeBtn.classList.remove('liked');
-            dislikeBtn.classList.remove('disliked');
-
-            if (userStatus === 'liked') {
-                likeBtn.classList.add('liked');
-            } else if (userStatus === 'disliked') {
-                dislikeBtn.classList.add('disliked');
-            }
-        }
+        // Executa a carga inicial quando abre o site
+        carregarVotosIniciais();
     </script>
 </body>
 </html>
+
+{
+  "likes": 0,
+  "dislikes": 0
+}
+
+npm init -y
+
+npm install express
+
+node server.js
