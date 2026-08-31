@@ -1,431 +1,201 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>TechPulse // O Blog de Tecnologia</title>
-=======
-    <title>Projeto Interativo - Votação Permanente</title>
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+    <title>Meu Blog Tech</title>
     <style>
-<<<<<<< HEAD
-        :root {
-            --bg-principal: #0f172a;
-            --bg-card: #1e293b;
-            --texto-principal: #f8fafc;
-            --texto-secundario: #94a3b8;
-            --azul-tech: #38bdf8;
-            --vermelho-alert: #f87171;
-=======
-        }body {
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #eef2f3;
-            margin: 0;
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
         }
 
-<<<<<<< HEAD
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg-principal);
-            color: var(--texto-principal);
-            margin: 0;
-            padding: 40px 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
         }
 
+        /* Cabeçalho */
+        header {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            color: #00d2d3;
+            font-size: 0.9rem;
+        }
+
+        /* Container Principal */
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        header {
-=======
-        }.card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-            text-align: center;
-<<<<<<< HEAD
-            margin-bottom: 50px;
-=======
-            max-width: 380px;
-            width: 100%;
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+        /* Card do Post */
+        .post {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
 
-<<<<<<< HEAD
-        header h1 {
-            color: var(--azul-tech);
-            font-size: 2.5rem;
-            margin: 0;
-            letter-spacing: -1px;
-        }
-=======
-        h3 { color: #333; margin-bottom: 8px; }
-        p { color: #666; font-size: 14px; line-height: 1.5; }
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-
-<<<<<<< HEAD
-        header p {
-            color: var(--texto-secundario);
-            margin-top: 5px;
+        .post-meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1rem;
         }
 
-        .feed {
+        .post h2 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .post p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Área de Interação (Botões) */
+        .interaction-area {
             display: flex;
-            flex-direction: column;
-            gap: 24px;
+            gap: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
         }
 
-        .post-card {
-            background-color: var(--bg-card);
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-
-        .categoria {
-            display: inline-block;
-            background-color: rgba(56, 189, 248, 0.1);
-            color: var(--azul-tech);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .post-card h2 {
-            margin: 0 0 12px 0;
-            font-size: 1.5rem;
-        }
-
-        .post-card p {
-            color: var(--texto-secundario);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .reacoes-container {
-=======
-        }.buttons-container {
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-            display: flex;
-<<<<<<< HEAD
-            gap: 12px;
-            border-top: 1px solid #334155;
-            padding-top: 16px;
-=======
-            justify-content: center;
-            gap: 16px;
-            margin-top: 24px;
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-        }
-
-<<<<<<< HEAD
-        .btn-reacao {
-        }display: flex;
-=======
         .btn {
             display: flex;
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
             align-items: center;
-<<<<<<< HEAD
-            gap: 8px;
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            color: var(--texto-principal);
-            padding: 8px 16px;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: none;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s ease;
-=======
-            gap: 10px;
-            padding: 12px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 30px;
-            background: white;
-            font-size: 16px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+            transition: all 0.2s ease;
+            background-color: #f0f2f5;
+            color: #555;
         }
 
-<<<<<<< HEAD
-        .btn-reacao:hover {
-         } border-color: var(--texto-secundario);
-=======
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+            background-color: #e4e6e9;
         }
 
-<<<<<<< HEAD
+        /* Estados Ativos */
         .btn-like.active {
-        }background-color: rgba(56, 189, 248, 0.15);
-            color: var(--azul-tech);
-            border-color: var(--azul-tech);
-=======
-        .btn-like.active {
-            background-color: #e7f3ff;
-            color: #1877f2;
-            border-color: #1877f2;
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+            background-color: #e3f2fd;
+            color: #0d47a1;
         }
 
-<<<<<<< HEAD
         .btn-dislike.active {
-        }background-color: rgba(248, 113, 113, 0.15);
-            color: var(--vermelho-alert);
-            border-color: var(--vermelho-alert);
-=======
-        .btn-dislike.active {
-            background-color: #ffebe9;
-            color: #e41e3f;
-            border-color: #af0925;
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+            background-color: #ffebee;
+            color: #b71c1c;
+        }
+
+        .count {
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
-<<<<<<< HEAD
-    <div class="container">
-        <header>
-            <h1>BlogTech</h1>
-            <p>O universo do desenvolvimento e hardware em um só lugar.</p>
-        </header>
+    <header>
+        <h1>Meu Blog Tech</h1>
+        <p>O universo da tecnologia em um só lugar</p>
+    </header>
 
-        <div class="feed" id="blogFeed">
-            <!-- Os posts serão inseridos aqui dinamicamente via JS -->
-        </div>
-    </div>
-=======
-    <div class="card">
-        <h3>Publicação Global</h3>
-        <p>Os votos dados aqui ficam salvos direto no servidor. Atualize a página à vontade para testar!</p>
-        
-        <div class="buttons-container">
-            <button class="btn btn-like" id="likeBtn">
-                👍 <span id="likeCount">0</span>
-            </button>
+    <div class="container">
+        <!-- Post do Blog -->
+        <article class="post">
+            <div class="post-meta">Postado em 31 de Agosto de 2026 por Admin</div>
+            <h2>O Futuro da Inteligência Artificial no Desenvolvimento Web</h2>
+            <p>A inteligência artificial está transformando a forma como escrevemos código. Desde ferramentas de autocompletar até geradores de layouts inteiros, o papel do desenvolvedor está evoluindo rápido. Estar atualizado com essas ferramentas não é mais um diferencial, mas uma necessidade de sobrevivência no mercado tecnológico atual.</p>
             
-            <button class="btn btn-dislike" id="dislikeBtn">
-                👎 <span id="dislikeCount">0</span>
-            </button>
-        </div>
+            <!-- Botões de Curtir e Descurtir -->
+            <div class="interaction-area">
+                <button class="btn btn-like" onclick="toggleLike()">
+                    👍 Curtir <span class="count" id="like-count">12</span>
+                </button>
+                <button class="btn btn-dislike" onclick="toggleDislike()">
+                    👎 Descurtir <span class="count" id="dislike-count">2</span>
+                </button>
+            </div>
+        </article>
     </div>
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
 
     <script>
-<<<<<<< HEAD
-        const feedElement = document.getElementById('blogFeed');
-        
-        // Controla o estado de cliques locais para impedir reações duplas em cada post
-        // Exemplo de formato: { "1": "liked", "2": "disliked" }
-        let estadoCliquesLocais = {};
+        // Variáveis de controle de estado
+        let likes = 12;
+        let dislikes = 2;
+        let hasLiked = false;
+        let hasDisliked = false;
 
-        async function carregarPosts() {
-            try {
-                const resposta = await fetch('/api/posts');
-                const posts = await resposta.json();
-                renderizarPosts(posts);
-            } catch (erro) {
-                console.error('Erro ao buscar posts:', erro);
-            }
-        }
-=======
-        const likeBtn = document.getElementById('likeBtn');
-        const dislikeBtn = document.getElementById('dislikeBtn');
-        const likeCount = document.getElementById('likeCount');
-        const dislikeCount = document.getElementById('dislikeCount');
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+        // Elementos do DOM
+        const likeCountEl = document.getElementById('like-count');
+        const dislikeCountEl = document.getElementById('dislike-count');
+        const likeBtn = document.querySelector('.btn-like');
+        const dislikeBtn = document.querySelector('.btn-dislike');
 
-<<<<<<< HEAD
-        function renderizarPosts(posts) {
-            feedElement.innerHTML = '';
-            
-            posts.forEach(post => {
-                const acaoAtual = estadoCliquesLocais[post.id] || null;
-
-                const card = document.createElement('article');
-                card.className = 'post-card';
-                card.innerHTML = `
-                    <span class="categoria">${post.categoria}</span>
-                    <h2>${post.titulo}</h2>
-                    <p>${post.conteudo}</p>
-                    <div class="reacoes-container">
-                        <button class="btn-reacao btn-like ${acaoAtual === 'liked' ? 'active' : ''}" onclick="processarVoto(${post.id}, 'likes')">
-                            👍 <span id="likes-count-${post.id}">${post.likes}</span>
-                        </button>
-                        <button class="btn-reacao btn-dislike ${acaoAtual === 'disliked' ? 'active' : ''}" onclick="processarVoto(${post.id}, 'dislikes')">
-                            👎 <span id="dislikes-count-${post.id}">${post.dislikes}</span>
-                        </button>
-                    </div>
-                `;
-                feedElement.appendChild(card);
-            });
-        }
-
-        async function enviarReacao(id, tipo, acao) {
-            try {
-            }const resposta = await fetch(`/api/posts/${id}/reacao`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ acao, tipo })
-                });
-                return await resposta.json();
-            } catch (erro) {
-            }console.error('Erro ao computar reação:', erro);
-=======
-        let likes = 0;
-        let dislikes = 0;
-        let userAction = null; // Controla apenas a ação local do navegador atual
-
-        // 1. Busca os números iniciais salvos no servidor ao carregar a página
-        async function carregarVotosIniciais() {
-            try {
-                const resposta = await fetch('/api/votos');
-                const dados = await resposta.json();
-                likes = dados.likes || 0;
-                dislikes = dados.dislikes || 0;
-                atualizarInterface();
-            } catch (erro) {
-                console.error('Erro ao buscar dados iniciais:', erro);
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-            }
-        }
-
-<<<<<<< HEAD
-        async function processarVoto(id, tipoClique) {
-        }const acaoAnterior = estadoCliquesLocais[id] || null;
-            
-            if (tipoClique === 'likes') {
-                if (acaoAnterior === 'liked') {
-                    // Remove curtida
-                    await enviarReacao(id, 'likes', 'remover');
-                    estadoCliquesLocais[id] = null;
-                } else {
-                    // Se tinha descurtido antes, limpa o deslike primeiro
-                    if (acaoAnterior === 'disliked') {
-                        await enviarReacao(id, 'dislikes', 'remover');
-                    }
-                    await enviarReacao(id, 'likes', 'adicionar');
-                    estadoCliquesLocais[id] = 'liked';
-                }
-            } else }
-                if (acaoAnterior === 'disliked') {
-                    // Remove descurtida
-                    await enviarReacao(id, 'dislikes', 'remover');
-                  }  estadoCliquesLocais[id] = null;
-                 else {
-                    // Se tinha curtido antes, limpa o like primeiro
-                    if (acaoAnterior === 'liked') {
-                        await enviarReacao(id, 'likes', 'remover');
-                    }
-                    await enviarReacao(id, 'dislikes', 'adicionar');
-                    estadoCliquesLocais[id] = 'disliked';
-                }
-            
-=======
-        // 2. Envia os novos valores calculados para salvar permanentemente
-        async function salvarNoServidor() {
-            try {
-                await fetch('/api/votos', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ likes, dislikes })
-                });
-            } catch (erro) {
-                console.error('Erro ao salvar os votos:', erro);
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-            }
-<<<<<<< HEAD
-            
-            // Recarrega os dados atualizados do servidor na tela
-            carregarPosts();
-=======
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
-        }
-
-<<<<<<< HEAD
-        // Inicialização
-        carregarPosts();
-=======
-        function atualizarInterface() {
-            likeCount.textContent = likes;
-            dislikeCount.textContent = dislikes;
-        }
-
-        // Evento de clique em curtir
-        likeBtn.addEventListener('click', async () => {
-            if (userAction === 'liked') {
+        // Função do botão Curtir
+        function toggleLike() {
+            if (hasLiked) {
                 likes--;
-                userAction = null;
+                hasLiked = false;
                 likeBtn.classList.remove('active');
             } else {
-                if (userAction === 'disliked') {
+                likes++;
+                hasLiked = true;
+                likeBtn.classList.add('active');
+                
+                // Se o usuário tinha descurtido, remove o descurtir
+                if (hasDisliked) {
                     dislikes--;
+                    hasDisliked = false;
                     dislikeBtn.classList.remove('active');
                 }
-                likes++;
-                userAction = 'liked';
-                likeBtn.classList.add('active');
             }
-            atualizarInterface();
-            await salvarNoServidor();
-        });
+            atualizarPainel();
+        }
 
-        // Evento de clique em descurtir
-        dislikeBtn.addEventListener('click', async () => {
-            if (userAction === 'disliked') {
+        // Função do botão Descurtir
+        function toggleDislike() {
+            if (hasDisliked) {
                 dislikes--;
-                userAction = null;
+                hasDisliked = false;
                 dislikeBtn.classList.remove('active');
             } else {
-                if (userAction === 'liked') {
+                dislikes++;
+                hasDisliked = true;
+                dislikeBtn.classList.add('active');
+                
+                // Se o usuário tinha curtido, remove o curtir
+                if (hasLiked) {
                     likes--;
+                    hasLiked = false;
                     likeBtn.classList.remove('active');
                 }
-                dislikes++;
-                userAction = 'disliked';
-                dislikeBtn.classList.add('active');
             }
-            atualizarInterface();
-            await salvarNoServidor();
-        });
+            atualizarPainel();
+        }
 
-        // Executa a carga inicial quando abre o site
-        carregarVotosIniciais();
->>>>>>> 538eb4c6d58d4949a795d4576312e3571dceafc8
+        // Atualiza os números na tela
+        function atualizarPainel() {
+            likeCountEl.textContent = likes;
+            dislikeCountEl.textContent = dislikes;
+        }
     </script>
 </body>
 </html>
-
-{
-  "likes": 0,
-  "dislikes": 0
-}
-
-npm init -y
-
-npm install express
-
-node server.js
